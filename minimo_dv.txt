@@ -1,0 +1,14 @@
+int minimo(int arr[],int ini,int fin){
+    if (ini==fin){
+        return arr[ini];
+    }
+    int mid= (ini+fin)/2;
+    int iz= minimo(arr,ini,mid);
+    int de= minimo(arr,mid+1,fin);
+    
+    if ((arr[mid]<iz) && (arr[mid]<de)) return arr[mid];
+    else  {
+        if (iz<de) return iz; else return de;
+    }
+    
+}
